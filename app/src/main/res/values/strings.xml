@@ -1,0 +1,160 @@
+<resources>
+    <!-- app texts -->
+    <string name="app_name">WordBook</string>
+
+    <string name="select_photo_source_title">Select photo source</string>
+    <string name="download_photo_title">Download photo</string>
+    <string name="share_set_title">Share</string>
+    <string name="db_export_title">Export full database backup</string>
+    <string name="db_export_description">Generates a zip-file that contains all your data. This file can be imported back.</string>
+    <string name="db_import_title">Import database</string>
+    <string name="db_import_description">Supports full backup exported by this app.</string>
+    <string name="set_import_title">Import set</string>
+    <string name="set_import_description">Supports set exported by this app.</string>
+
+    <string name="share_db_with_title">Share database with</string>
+    <string name="share_set_with_title">Share set with</string>
+
+    <string name="empty_sets_list_msg">Create your first set.</string>
+    <string name="empty_terms_list_msg">Create your first card.</string>
+    <string name="here_is_empty_msg">Here is empty!</string>
+    <string name="unable_to_find">Unable to find anything.</string>
+
+    <!-- screen titles -->
+    <string name="title_sets">Sets</string>
+    <string name="title_settings">Settings</string>
+    <string name="title_new_term">New Card</string>
+    <string name="title_edit_term">Edit Card</string>
+
+    <!-- btn texts -->
+    <string name="btn_device">Device</string>
+    <string name="btn_link">Link</string>
+    <string name="btn_download">DOWNLOAD</string>
+    <string name="btn_done_title">DONE</string>
+    <string name="btn_cancel_title">CANCEL</string>
+    <string name="btn_create_set">CREATE SET</string>
+    <string name="btn_create_term">CREATE CARD</string>
+    <string name="btn_add_new_card">ADD NEW CARD</string>
+    <string name="btn_pick_photo_title">PICK PHOTO</string>
+    <string name="btn_show_answer">SHOW ANSWER</string>
+    <string name="btn_submit">SUBMIT</string>
+    <string name="btn_next">NEXT</string>
+    <string name="btn_propose_meaning">PROPOSE MEANING</string>
+    <string name="btn_request_permissions">Request Permissions</string>
+
+    <!-- dialog texts -->
+    <string name="dialog_title_terms">cards</string>
+    <string name="dialog_title_sets">sets</string>
+    <string name="dialog_btn_remove">Remove</string>
+    <string name="dialog_btn_cancel">Cancel</string>
+    <string name="dialog_title_remove">Remove</string>
+    <string name="dialog_btn_dismiss">Dismiss</string>
+    <string name="dialog_btn_confirm">Confirm</string>
+    <string name="dialog_btn_continue">Continue</string>
+    <string name="dialog_title_new_set">New set</string>
+    <string name="dialog_title_move_to">Move to</string>
+    <string name="dialog_title_edit_set">Edit set</string>
+    <string name="dialog_title_remove_set">Remove Set</string>
+    <string name="dialog_title_remove_term">Remove Card</string>
+    <string name="dialog_title_confirmation">Confirmation</string>
+    <string name="dialog_title_warning">Warning</string>
+    <string name="dialog_msg_remove_conf">Are you sure you want to remove this set: </string>
+    <string name="dialog_msg_remove_term_conf">Are you sure you want to remove this card: </string>
+    <string name="dialog_msg_remove_terms_conf">Are you sure you want to remove these cards?</string>
+    <string name="dialog_msg_remove_sets_conf">Are you sure you want to remove these sets?</string>
+    <string name="dialog_msg_propose_meaning_conf">Current values may be replaced by new ones. Are you sure you want to continue?</string>
+
+    <!-- some labels -->
+    <string name="label_enter_correct_answer_here">Enter the correct answer here.</string>
+    <string name="label_dismiss">dismiss</string>
+    <string name="label_term">Term</string>
+    <string name="label_def">Definition</string>
+    <string name="label_sets_search">Search sets</string>
+    <string name="label_ex">Examples - (optional)</string>
+    <string name="label_selected_items">Selected:</string>
+    <string name="label_terms_search">Search cards</string>
+    <string name="label_trans">Transcription - (optional)</string>
+    <string name="label_paste_link_here">Paste link here..</string>
+
+    <!-- set adding dialog text field labels -->
+    <string name="set_name_label">Name</string>
+    <string name="set_des_label">Description - (optional)</string>
+
+    <!-- drawer btn title -->
+    <string name="drawer_edit">Edit</string>
+    <string name="drawer_close">Close</string>
+    <string name="drawer_flashcards">Flashcards</string>
+    <string name="drawer_remove">Remove</string>
+    <string name="drawer_move_to">Move to</string>
+    <string name="drawer_settings">Settings</string>
+    <string name="drawer_tests">Tests</string>
+    <string name="drawer_writing">Writing</string>
+
+    <!-- some error msg -->
+    <string name="error_image_load">Sorry, can\'t load the image.</string>
+    <string name="image_load_error">Something went wrong, couldn\'t load the image.</string>
+    <string name="error_card_inserting">Card inserting wasn\'t successful!</string>
+
+    <!-- warning messages -->
+    <string name="warning_incorrect_size_of_set_for_flashcards_mode">To practice in flashcards mode set must includes at least 2 cards.</string>
+    <string name="warning_incorrect_size_of_set_for_tests_mode">To practice in tests mode set must includes at least 5 cards.</string>
+    <string name="warning_incorrect_size_of_set_for_writing_mode">To practice in writing mode set must includes at least 1 card.</string>
+
+    <!-- term action screen error msg -->
+    <string name="error_un_known_error">Unknown error!</string>
+    <string name="error_no_internet_connection">Couldn\'t connect to the server!</string>
+    <string name="error_can_not_find_anything">Can\'t find anything!</string>
+    <string name="error_empty_term_field">Term field must be filled!</string>
+    <string name="error_empty_def_field">Definition field must be filled!</string>
+
+    <!-- import database messages -->
+    <string name="error_could_not_find_file">Couldn\'t find the file.</string>
+    <string name="error_wrong_file">The file is wrong.</string>
+    <string name="error_something_went_wrong">Something went wrong.</string>
+    <string name="error_could_not_import_db">Couldn\'t import the database.</string>
+    <string name="db_successfully_imported">The database has been successfully imported.</string>
+
+    <string name="error_cannot_read_the_file">Can\'t read the file!</string>
+    <string name="set_successfully_imported">The set has been successfully imported to the database.</string>
+
+    <!-- settings titles -->
+    <string name="settings_title_speech_speed">Speech speed rate</string>
+    <string name="settings_title_speech_language">Speech language</string>
+    <string name="settings_title_app_language">App language</string>
+    <string name="settings_title_dark_theme">Dark theme</string>
+    <string name="settings_title_theme_primary_color">Primary color</string>
+
+    <string name="flashcard_option_is_image_visible">Show image</string>
+    <string name="flashcard_option_is_examples_visible">Show examples</string>
+    <string name="flashcard_option_is_reversed_review">Reversed review</string>
+    <string name="flashcard_option_card_rotation_horizontal">Horizontal</string>
+    <string name="flashcard_option_card_rotation_vertical">Vertical</string>
+    <string name="flashcard_option_card_rotation">Card flip</string>
+
+    <string name="flashcard_drag_title_got_it">Got It</string>
+    <string name="flashcard_drag_title_study_again">Study Again</string>
+
+    <string name="set_card_contains">Contains:</string>
+    <string name="set_card_cards">cards</string>
+
+    <!-- order section -->
+    <string name="os_title_by_name">By name</string>
+    <string name="os_title_by_term">By term</string>
+    <string name="os_title_by_date">By date</string>
+    <string name="os_title_by_items">By items</string>
+    <string name="os_title_ascending">Ascending</string>
+    <string name="os_title_descending">Descending</string>
+    <string name="os_title_by_definition">By definition</string>
+    <string name="os_title_by_description">By description</string>
+
+    <string name="request_permissions_message">To use this app\'s functionalities, you need to give us the permissions.</string>
+
+    <!-- speech languages -->
+    <string name="speech_language_english_us">English(US)</string>
+    <string name="speech_language_english_uk">English(UK)</string>
+
+    <!-- app languages -->
+    <string name="language_english">English(EN)</string>
+    <string name="language_ukrainian">Українська(UA)</string>
+
+</resources>

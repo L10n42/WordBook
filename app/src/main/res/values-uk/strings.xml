@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- app texts -->
+    <string name="app_name">WordBook</string>
+
+    <string name="select_photo_source_title">Виберіть джерело зображення</string>
+    <string name="download_photo_title">Завантажити зображення</string>
+    <string name="share_set_title">Поділитися</string>
+    <string name="db_export_title">Експортувати повну копію бази даних</string>
+    <string name="db_export_description">Генерує zip-файл, який містить усі ваші дані. Цей файл може бути імпортований назад.</string>
+    <string name="db_import_title">Імпортувати базу даних</string>
+    <string name="db_import_description">Підтримує файли експортовані цією програмою.</string>
+    <string name="set_import_title">Імпортувати колекцію</string>
+    <string name="set_import_description">Підтримує колекції експортовані цією програмою.</string>
+
+    <string name="share_db_with_title">Поділитися базою даних</string>
+    <string name="share_set_with_title">Поділитися колекцією</string>
+
+    <string name="empty_sets_list_msg">Створіть вашу першу колекцію.</string>
+    <string name="empty_terms_list_msg">Створіть вашу першу картку.</string>
+    <string name="here_is_empty_msg">Тут пусто!</string>
+    <string name="unable_to_find">Нічого не знайдено.</string>
+
+    <!-- screen titles -->
+    <string name="title_sets">Колекції</string>
+    <string name="title_settings">Налаштування</string>
+    <string name="title_new_term">Нова картка</string>
+    <string name="title_edit_term">Редагувати картку</string>
+
+    <!-- btn texts -->
+    <string name="btn_device">Пристрій</string>
+    <string name="btn_link">Посилання</string>
+    <string name="btn_download">ЗАВАНТАЖИТИ</string>
+    <string name="btn_done_title">ГОТОВО</string>
+    <string name="btn_cancel_title">СКАСУВАТИ</string>
+    <string name="btn_create_set">СТВОРИТИ</string>
+    <string name="btn_create_term">СТВОРИТИ</string>
+    <string name="btn_add_new_card">ДОДАТИ КАРТКУ</string>
+    <string name="btn_pick_photo_title">Зображення</string>
+    <string name="btn_show_answer">Відповідь</string>
+    <string name="btn_submit">Перевірити</string>
+    <string name="btn_next">Наступна</string>
+    <string name="btn_propose_meaning">Значення</string>
+    <string name="btn_request_permissions">Запитати дозволи</string>
+
+    <!-- dialog texts -->
+    <string name="dialog_title_terms">картки</string>
+    <string name="dialog_title_sets">колекції</string>
+    <string name="dialog_btn_remove">Видалити</string>
+    <string name="dialog_btn_cancel">Скасувати</string>
+    <string name="dialog_title_remove">Видалити</string>
+    <string name="dialog_btn_dismiss">Відхилити</string>
+    <string name="dialog_btn_confirm">Підтвердити</string>
+    <string name="dialog_btn_continue">Продовжити</string>
+    <string name="dialog_title_new_set">Нова колекція</string>
+    <string name="dialog_title_move_to">Перемістити до</string>
+    <string name="dialog_title_edit_set">Редагувати колекцію</string>
+    <string name="dialog_title_remove_set">Видалити колекцію</string>
+    <string name="dialog_title_remove_term">Видалити картку</string>
+    <string name="dialog_title_confirmation">Підтвердження</string>
+    <string name="dialog_title_warning">Попередження</string>
+    <string name="dialog_msg_remove_conf">Ви впевнені, що хочете видалити цю колекцію:</string>
+    <string name="dialog_msg_remove_term_conf">Ви впевнені, що хочете видалити цю картку:</string>
+    <string name="dialog_msg_remove_terms_conf">Ви впевнені, що хочете видалити ці картки?</string>
+    <string name="dialog_msg_remove_sets_conf">Ви впевнені, що хочете видалити ці колекції?</string>
+    <string name="dialog_msg_propose_meaning_conf">Поточні значення можуть бути замінені на нові. Ви впевнені, що бажаєте продовжити?</string>
+
+    <!-- some labels -->
+    <string name="label_enter_correct_answer_here">Введіть правильну відповідь тут</string>
+    <string name="label_dismiss">відхилити</string>
+    <string name="label_term">Термін</string>
+    <string name="label_def">Визначення</string>
+    <string name="label_sets_search">Пошук колекцій</string>
+    <string name="label_ex">Приклади - (необов\'язково)</string>
+    <string name="label_selected_items">Вибрано:</string>
+    <string name="label_terms_search">Пошук карток</string>
+    <string name="label_trans">Транскрипція - (необов\'язково)</string>
+    <string name="label_paste_link_here">Вставте посилання тут</string>
+
+    <!-- set adding dialog text field labels -->
+    <string name="set_name_label">Назва</string>
+    <string name="set_des_label">Опис - (необов\'язково)</string>
+
+    <!-- drawer btn title -->
+    <string name="drawer_edit">Редагувати</string>
+    <string name="drawer_close">Закрити</string>
+    <string name="drawer_flashcards">Картки</string>
+    <string name="drawer_remove">Видалити</string>
+    <string name="drawer_move_to">Перемістити до</string>
+    <string name="drawer_settings">Налаштування</string>
+    <string name="drawer_tests">Тести</string>
+    <string name="drawer_writing">Написання</string>
+
+    <!-- some error msg -->
+    <string name="error_image_load">Вибачте, не можу завантажити зображення.</string>
+    <string name="image_load_error">Щось пішло не так, не вдалося завантажити зображення.</string>
+    <string name="error_card_inserting">Не вдалося створити  картку.</string>
+
+    <!-- warning messages -->
+    <string name="warning_incorrect_size_of_set_for_flashcards_mode">Щоб тренуватися в режимі Карток, колекція має включати принаймні 2 картки.</string>
+    <string name="warning_incorrect_size_of_set_for_tests_mode">Щоб тренуватися в режимі Тестів, колекція має включати принаймні 5 карток.</string>
+    <string name="warning_incorrect_size_of_set_for_writing_mode">Щоб тренуватися в режимі Написання, колекція має включати принаймні 1 картку.</string>
+
+    <!-- term action screen error msg -->
+    <string name="error_un_known_error">Невідома помилка!</string>
+    <string name="error_no_internet_connection">Не вдалося підключитися до сервера!</string>
+    <string name="error_can_not_find_anything">Не вдалося нічого знайти!</string>
+    <string name="error_empty_term_field">Поле Термін обов\'язкове для заповнення!</string>
+    <string name="error_empty_def_field">Поле Визначення обов\'язкове для заповнення</string>
+
+    <!-- import database messages -->
+    <string name="error_could_not_find_file">Не вдалося знайти файл.</string>
+    <string name="error_wrong_file">Неправильний файл.</string>
+    <string name="error_something_went_wrong">Щось пішло не так.</string>
+    <string name="error_could_not_import_db">Не вдалося імпортувати базу даних.</string>
+    <string name="db_successfully_imported">Базу даних успішно імпортовано.</string>
+
+    <string name="error_cannot_read_the_file">Не можу прочитати цей файл!</string>
+    <string name="set_successfully_imported">Колекцію успішно імпортовано до бази даних.</string>
+
+    <!-- settings titles -->
+    <string name="settings_title_speech_speed">Швидкість мовлення</string>
+    <string name="settings_title_speech_language">Мова мовлення</string>
+    <string name="settings_title_app_language">Мова програми</string>
+    <string name="settings_title_dark_theme">Темна тема</string>
+    <string name="settings_title_theme_primary_color">Основний колір</string>
+
+    <string name="flashcard_option_is_image_visible">Показувати зображення</string>
+    <string name="flashcard_option_is_examples_visible">Показувати приклади</string>
+    <string name="flashcard_option_is_reversed_review">Зворотний огляд</string>
+    <string name="flashcard_option_card_rotation_horizontal">Горизонтально</string>
+    <string name="flashcard_option_card_rotation_vertical">Вертикально</string>
+    <string name="flashcard_option_card_rotation">Перевиртати карту</string>
+
+    <string name="flashcard_drag_title_got_it">Зрозуміло</string>
+    <string name="flashcard_drag_title_study_again">Вчити знову</string>
+
+    <string name="set_card_contains">Містить:</string>
+    <string name="set_card_cards">карток</string>
+
+    <!-- order section -->
+    <string name="os_title_by_name">За назвою</string>
+    <string name="os_title_by_term">За терміном</string>
+    <string name="os_title_by_date">За датою</string>
+    <string name="os_title_by_items">За елементами</string>
+    <string name="os_title_ascending">Зростання</string>
+    <string name="os_title_descending">Спадання</string>
+    <string name="os_title_by_definition">За визначенням</string>
+    <string name="os_title_by_description">За описом</string>
+
+    <string name="request_permissions_message">Щоб використовувати функції цієї програми, вам потрібно надати нам відповідні дозволи.</string>
+
+    <!-- speech languages -->
+    <string name="speech_language_english_us">English(US)</string>
+    <string name="speech_language_english_uk">English(UK)</string>
+
+    <!-- app languages -->
+    <string name="language_english">English(EN)</string>
+    <string name="language_ukrainian">Українська(UA)</string>
+
+</resources>
