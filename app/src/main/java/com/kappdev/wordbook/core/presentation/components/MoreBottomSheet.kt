@@ -3,7 +3,7 @@ package com.kappdev.wordbook.core.presentation.components
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.itemsIndexed
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
@@ -36,7 +36,7 @@ fun MoreBottomSheet(
         LazyColumn(
             modifier = Modifier.fillMaxWidth().padding(vertical = 8.dp)
         ) {
-            itemsIndexed(items) { index, currentItem ->
+            items(items) { currentItem ->
                 PopupItem(
                     item = currentItem,
                     onItemClick = onClick

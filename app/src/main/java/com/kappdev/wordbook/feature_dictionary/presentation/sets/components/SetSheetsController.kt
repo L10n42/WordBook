@@ -37,6 +37,7 @@ fun SetSheetsController(
                 )
                 navController.navigate(route)
             }
+
             val testsWarningMsg = stringResource(R.string.warning_incorrect_size_of_set_for_tests_mode)
             val writingWarningMsg = stringResource(R.string.warning_incorrect_size_of_set_for_writing_mode)
             val flashcardsWarningMsg = stringResource(R.string.warning_incorrect_size_of_set_for_flashcards_mode)

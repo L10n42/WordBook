@@ -37,12 +37,6 @@ object DrawerItems {
         id = "flashCards"
     )
 
-    val Settings = DrawerItem(
-        icon = Icons.Default.Settings,
-        titleResId = R.string.drawer_settings,
-        id = "settings"
-    )
-
     val MoveTo = DrawerItem(
         icon = Icons.Default.MoveToInbox,
         titleResId = R.string.drawer_move_to,
@@ -50,7 +44,7 @@ object DrawerItems {
     )
 
     val ShareSet = DrawerItem(
-        icon = Icons.Default.ImportExport,
+        icon = Icons.Default.Share,
         titleResId = R.string.share_set_title,
         id = "share_set"
     )
