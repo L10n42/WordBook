@@ -28,7 +28,7 @@
 
     <!-- btn texts -->
     <string name="btn_device">Device</string>
-    <string name="btn_ok">Ok</string>
+    <string name="btn_ok">OK</string>
     <string name="btn_link">Link</string>
     <string name="btn_download">DOWNLOAD</string>
     <string name="btn_done_title">DONE</string>
@@ -67,7 +67,7 @@
 
     <!-- some labels -->
     <string name="label_enter_correct_answer_here">Enter the correct answer here.</string>
-    <string name="label_dismiss">dismiss</string>
+    <string name="label_dismiss">Dismiss</string>
     <string name="label_term">Term</string>
     <string name="label_def">Definition</string>
     <string name="label_sets_search">Search sets</string>

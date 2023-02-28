@@ -68,7 +68,7 @@
 
     <!-- some labels -->
     <string name="label_enter_correct_answer_here">Введіть правильну відповідь тут</string>
-    <string name="label_dismiss">відхилити</string>
+    <string name="label_dismiss">Відхилити</string>
     <string name="label_term">Термін</string>
     <string name="label_def">Визначення</string>
     <string name="label_sets_search">Пошук колекцій</string>
