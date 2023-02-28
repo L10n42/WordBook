@@ -96,10 +96,10 @@ fun TermsScreen(
                     )
                 },
                 floatingActionButton = {
-                    val isAddBtnVisible = scrollingToTop && !isSearchModeOn && !isMultiSelectModeOn
                     AnimatedAddBtn(
                         textId = R.string.btn_create_term,
-                        isVisible = isAddBtnVisible,
+                        expanded = scrollingToTop,
+                        isVisible = !isSearchModeOn && !isMultiSelectModeOn,
                         onClick = { navController.navigate(Screen.AddEditTerm.route + "?setId=${set.setId}") }
                     )
                 }

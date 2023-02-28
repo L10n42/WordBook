@@ -104,9 +104,9 @@ fun SetsScreen(
                 }
             },
             floatingActionButton = {
-                val isAddBtnVisible = scrollingToTop && !isSearchModeOn && !isMultiSelectModeOn
                 AnimatedAddBtn(
-                    isVisible = isAddBtnVisible,
+                    expanded = scrollingToTop,
+                    isVisible = !isSearchModeOn && !isMultiSelectModeOn,
                     textId = R.string.btn_create_set,
                     onClick = { viewModel.showDialog(SetsDialog.Add) }
                 )
