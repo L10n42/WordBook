@@ -2,6 +2,8 @@ package com.kappdev.wordbook.feature_dictionary.domain.repository
 
 import androidx.compose.ui.graphics.Color
 import com.kappdev.wordbook.core.domain.util.term_to_speech.SpeechLanguage
+import com.kappdev.wordbook.feature_dictionary.domain.util.SetOrder
+import com.kappdev.wordbook.feature_dictionary.domain.util.TermOrder
 
 interface SettingsRepository {
 
@@ -28,4 +30,12 @@ interface SettingsRepository {
     fun setAppLanguage(language: String)
 
     fun getAppLanguage(): String
+
+    fun setSetsOrder(order: SetOrder)
+
+    fun getSetsOrder(): SetOrder
+
+    fun setTermsOrder(order: TermOrder)
+
+    fun getTermsOrder(): TermOrder
 }

@@ -1,31 +1,32 @@
 package com.kappdev.wordbook
 
-import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.compose.material.ExperimentalMaterialApi
-import androidx.compose.ui.ExperimentalComposeUiApi
-import androidx.navigation.NavHostController
-import androidx.navigation.compose.rememberNavController
-import com.google.accompanist.permissions.ExperimentalPermissionsApi
-import dagger.hilt.android.AndroidEntryPoint
 import android.Manifest
 import android.content.Context
 import android.content.SharedPreferences
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.MaterialTheme
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.SideEffect
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
+import com.google.accompanist.permissions.ExperimentalPermissionsApi
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import com.kappdev.wordbook.core.domain.util.AppLanguage
 import com.kappdev.wordbook.core.presentation.navigation.components.SetupNavGraph
 import com.kappdev.wordbook.core.presentation.permissions.RequestMultiplePermissions
 import com.kappdev.wordbook.feature_dictionary.data.repository.SettingsRepositoryImpl
-import com.kappdev.wordbook.feature_dictionary.domain.util.SettingsSP
 import com.kappdev.wordbook.ui.theme.Blue200
 import com.kappdev.wordbook.ui.theme.Blue500
 import com.kappdev.wordbook.ui.theme.WordBookTheme
+import dagger.hilt.android.AndroidEntryPoint
 import java.util.*
 
 @AndroidEntryPoint
@@ -47,7 +48,7 @@ class MainActivity : ComponentActivity(), SharedPreferences.OnSharedPreferenceCh
         super.onCreate(savedInstanceState)
 
         settingsRepository = SettingsRepositoryImpl(this)
-        sharedPreferences = getSharedPreferences(SettingsSP.Name.key, Context.MODE_PRIVATE)
+        sharedPreferences = getSharedPreferences(SettingsRepositoryImpl.SETTINGS, Context.MODE_PRIVATE)
         sharedPreferences.registerOnSharedPreferenceChangeListener(this)
         readAll()
 
@@ -94,10 +95,10 @@ class MainActivity : ComponentActivity(), SharedPreferences.OnSharedPreferenceCh
 
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
         when(key) {
-            SettingsSP.Theme.key -> readTheme()
-            SettingsSP.AppLanguage.key -> readAppLanguage()
-            SettingsSP.DarkThemePrimaryColor.key -> readDarkThemePrimaryColor()
-            SettingsSP.LightThemePrimaryColor.key -> readLightThemePrimaryColor()
+            SettingsRepositoryImpl.THEME_KEY -> readTheme()
+            SettingsRepositoryImpl.APP_LANGUAGE_KEY -> readAppLanguage()
+            SettingsRepositoryImpl.DARK_THEME_PRIMARY_COLOR_KEY -> readDarkThemePrimaryColor()
+            SettingsRepositoryImpl.LIGHT_THEME_PRIMARY_COLOR_KEY -> readLightThemePrimaryColor()
         }
     }
 

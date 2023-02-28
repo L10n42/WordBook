@@ -6,6 +6,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.kappdev.wordbook.feature_dictionary.domain.model.Set
+import com.kappdev.wordbook.feature_dictionary.domain.repository.SettingsRepository
 import com.kappdev.wordbook.feature_dictionary.domain.use_cases.DictionaryUseCases
 import com.kappdev.wordbook.feature_dictionary.domain.use_cases.ImExDatabaseUseCases
 import com.kappdev.wordbook.feature_dictionary.domain.use_cases.SetsSearch
@@ -25,7 +26,8 @@ import javax.inject.Inject
 @HiltViewModel
 class SetsViewModel @Inject constructor(
     private val dictionaryUseCases: DictionaryUseCases,
-    private val imExDatabaseUseCases: ImExDatabaseUseCases
+    private val imExDatabaseUseCases: ImExDatabaseUseCases,
+    private val settings: SettingsRepository
 ) : ViewModel() {
     var lastSearchValue = ""
 
@@ -44,7 +46,7 @@ class SetsViewModel @Inject constructor(
     private val _snackbarState = mutableStateOf(SnackbarState())
     val snackbarState: State<SnackbarState> = _snackbarState
 
-    private val _setsOrder = mutableStateOf<SetOrder>(SetOrder.Name(OrderType.Ascending))
+    private val _setsOrder = mutableStateOf(settings.getSetsOrder())
     val setsOrder: State<SetOrder> = _setsOrder
 
     val sets = mutableStateListOf<Set>()
@@ -63,6 +65,7 @@ class SetsViewModel @Inject constructor(
 
     fun changeOrderAndGetSets(newOrder: SetOrder) {
         _setsOrder.value = newOrder
+        settings.setSetsOrder(newOrder)
         sortSets(setsOrder.value)
     }
 

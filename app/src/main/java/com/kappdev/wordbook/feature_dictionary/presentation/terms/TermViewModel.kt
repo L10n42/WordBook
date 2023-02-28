@@ -11,6 +11,7 @@ import com.kappdev.wordbook.core.domain.util.term_to_speech.TermToSpeech
 import com.kappdev.wordbook.feature_dictionary.domain.model.CardTerm
 import com.kappdev.wordbook.feature_dictionary.domain.model.Set
 import com.kappdev.wordbook.feature_dictionary.domain.model.Term
+import com.kappdev.wordbook.feature_dictionary.domain.repository.SettingsRepository
 import com.kappdev.wordbook.feature_dictionary.domain.use_cases.DictionaryUseCases
 import com.kappdev.wordbook.feature_dictionary.domain.use_cases.SortCards
 import com.kappdev.wordbook.feature_dictionary.domain.use_cases.TermsSearch
@@ -29,13 +30,14 @@ import javax.inject.Inject
 class TermViewModel @Inject constructor(
     private val dictionaryUseCases: DictionaryUseCases,
     private val termToSpeech: TermToSpeech,
+    private val settings: SettingsRepository,
     savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
     private val setId = savedStateHandle.get<String>("setId")
     var lastSearchValue = ""
 
-    private val _termsOrder = mutableStateOf<TermOrder>(TermOrder.Term(OrderType.Ascending))
+    private val _termsOrder = mutableStateOf(settings.getTermsOrder())
     val termsOrder: State<TermOrder> = _termsOrder
 
     private val _currentSet = mutableStateOf<Set?>(null)
@@ -65,6 +67,7 @@ class TermViewModel @Inject constructor(
 
     fun changeOrderAndGetTerms(newOrder: TermOrder) {
         _termsOrder.value = newOrder
+        settings.setTermsOrder(newOrder)
         sortCards(termsOrder.value)
     }
 
