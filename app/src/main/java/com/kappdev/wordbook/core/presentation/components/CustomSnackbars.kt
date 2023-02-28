@@ -86,7 +86,7 @@ private fun CustomSnackbarContent(
                     TextButton(onClick = onActionClick) {
                         Text(
                             text = label,
-                            color = MaterialTheme.colors.primary,
+                            color = contentColor,
                             fontWeight = FontWeight.Bold
                         )
                     }

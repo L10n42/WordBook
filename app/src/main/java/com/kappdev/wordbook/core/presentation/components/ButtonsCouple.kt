@@ -44,7 +44,6 @@ fun ButtonsCouple(
             shape = RoundedCornerShape(16.dp),
             modifier = Modifier.width(150.dp),
             colors = ButtonDefaults.buttonColors(),
-            border = null,
             onClick = onPositiveClick
         ) {
             Text(

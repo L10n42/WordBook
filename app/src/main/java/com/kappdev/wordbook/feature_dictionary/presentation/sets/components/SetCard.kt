@@ -2,6 +2,7 @@ package com.kappdev.wordbook.feature_dictionary.presentation.sets.components
 
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
@@ -137,7 +138,7 @@ fun SetCard(
             Spacer(modifier = Modifier.height(8.dp))
 
             Button(
-                shape = RoundedCornerShape(bottomEnd = 16.dp, topStart = 16.dp),
+                shape = RoundedCornerShape(16.dp),
                 onClick = {
                     navController.navigate(Screen.AddEditTerm.route + "?setId=${set.setId}")
                 }
@@ -151,7 +152,7 @@ fun SetCard(
                 Text(
                     text = stringResource(id = R.string.btn_add_new_card),
                     color = MaterialTheme.colors.onPrimary,
-                    fontWeight = FontWeight.Bold
+                    fontWeight = FontWeight.Bold,
                 )
             }
         }
