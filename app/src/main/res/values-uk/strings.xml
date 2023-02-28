@@ -29,6 +29,7 @@
 
     <!-- btn texts -->
     <string name="btn_device">Пристрій</string>
+    <string name="btn_ok">Ок</string>
     <string name="btn_link">Посилання</string>
     <string name="btn_download">ЗАВАНТАЖИТИ</string>
     <string name="btn_done_title">ГОТОВО</string>

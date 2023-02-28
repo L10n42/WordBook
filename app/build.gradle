@@ -112,6 +112,9 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.10.1'
     implementation 'com.beust:klaxon:5.5'
 
+    // color picker
+    implementation "com.github.skydoves:colorpicker-compose:1.0.0"
+
     // Google - accompanist
     implementation "com.google.accompanist:accompanist-systemuicontroller:$accompanist_version"
     implementation "com.google.accompanist:accompanist-permissions:$accompanist_version"

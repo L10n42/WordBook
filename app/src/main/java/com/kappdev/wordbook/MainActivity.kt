@@ -93,11 +93,11 @@ class MainActivity : ComponentActivity(), SharedPreferences.OnSharedPreferenceCh
     private fun readLightThemePrimaryColor() { lightThemePrimaryColor.value = settingsRepository.getLightThemePrimaryColor() }
 
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
-        when {
-            (key == SettingsSP.Theme.key) -> readTheme()
-            (key == SettingsSP.AppLanguage.key) -> readAppLanguage()
-            (key != null && key.contains(SettingsSP.DarkThemePrimaryColor.key)) -> readDarkThemePrimaryColor()
-            (key != null && key.contains(SettingsSP.LightThemePrimaryColor.key)) -> readLightThemePrimaryColor()
+        when(key) {
+            SettingsSP.Theme.key -> readTheme()
+            SettingsSP.AppLanguage.key -> readAppLanguage()
+            SettingsSP.DarkThemePrimaryColor.key -> readDarkThemePrimaryColor()
+            SettingsSP.LightThemePrimaryColor.key -> readLightThemePrimaryColor()
         }
     }
 

@@ -28,6 +28,7 @@
 
     <!-- btn texts -->
     <string name="btn_device">Device</string>
+    <string name="btn_ok">Ok</string>
     <string name="btn_link">Link</string>
     <string name="btn_download">DOWNLOAD</string>
     <string name="btn_done_title">DONE</string>

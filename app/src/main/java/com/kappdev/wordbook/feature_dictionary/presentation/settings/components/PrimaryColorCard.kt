@@ -9,10 +9,12 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.kappdev.wordbook.R
+import com.kappdev.wordbook.core.presentation.components.ColorPickerDialog
 import com.kappdev.wordbook.feature_dictionary.presentation.settings.SettingsViewModel
 
 @Composable
@@ -25,15 +27,29 @@ fun PrimaryColorCard(
         else -> settingsViewModel.getLightThemePrimaryColor()
     }
 
-    var showPickColorDialog by remember {
-        mutableStateOf(false)
+    val setColor = { color: Color ->
+        when {
+            isThemeDark -> settingsViewModel.setDarkThemePrimaryColor(color)
+            !isThemeDark -> settingsViewModel.setLightThemePrimaryColor(color)
+        }
     }
 
-    if (showPickColorDialog)
-        PickPrimaryColorDialog(
-            settingsViewModel = settingsViewModel,
-            setShowDialog = { hide -> showPickColorDialog = hide }
+    var showColorPicker by remember { mutableStateOf(false) }
+    if (showColorPicker) {
+        ColorPickerDialog(
+            onColorChoose = setColor,
+            hideDialog = { showColorPicker = false }
         )
+    }
+
+    var showPickColorDialog by remember { mutableStateOf(false) }
+    if (showPickColorDialog) {
+        PickPrimaryColorDialog(
+            onColorChoose = setColor,
+            hideDialog = { showPickColorDialog = false },
+            showColorPicker = { showColorPicker = true }
+        )
+    }
 
     Row(
         horizontalArrangement = Arrangement.SpaceBetween,

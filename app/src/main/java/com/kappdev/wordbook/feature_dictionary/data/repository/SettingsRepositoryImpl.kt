@@ -2,6 +2,7 @@ package com.kappdev.wordbook.feature_dictionary.data.repository
 
 import android.content.Context
 import androidx.compose.ui.graphics.Color
+import com.google.gson.Gson
 import com.kappdev.wordbook.core.domain.util.AppLanguage
 import com.kappdev.wordbook.core.domain.util.term_to_speech.SpeechLanguage
 import com.kappdev.wordbook.feature_dictionary.domain.repository.SettingsRepository
@@ -10,12 +11,6 @@ import com.kappdev.wordbook.ui.theme.Blue200
 import com.kappdev.wordbook.ui.theme.Blue500
 
 class SettingsRepositoryImpl(context: Context) : SettingsRepository {
-    private companion object ColorConst {
-        const val RED = "_red"
-        const val GREEN = "_green"
-        const val BLUE = "_blue"
-        const val ALPHA = "_alpha"
-    }
 
     private val sharedPreferences = context.getSharedPreferences(SettingsSP.Name.key, Context.MODE_PRIVATE)
     private val editor = sharedPreferences.edit()
@@ -31,8 +26,7 @@ class SettingsRepositoryImpl(context: Context) : SettingsRepository {
     }
 
     override fun setSpeechLanguage(speechLanguage: SpeechLanguage) {
-        editor.putString(SettingsSP.SpeechLanguage.key, speechLanguage.id)
-        editor.apply()
+        editor.putString(SettingsSP.SpeechLanguage.key, speechLanguage.id).apply()
     }
 
     override fun getSpeechSpeed(): Float {
@@ -40,13 +34,11 @@ class SettingsRepositoryImpl(context: Context) : SettingsRepository {
     }
 
     override fun setSpeechSpeed(speed: Float) {
-        editor.putFloat(SettingsSP.SpeechSpeedRate.key, speed)
-        editor.apply()
+        editor.putFloat(SettingsSP.SpeechSpeedRate.key, speed).apply()
     }
 
     override fun setTheme(theme: Boolean) {
-        editor.putBoolean(SettingsSP.Theme.key, theme)
-        editor.apply()
+        editor.putBoolean(SettingsSP.Theme.key, theme).apply()
     }
 
     override fun getTheme(): Boolean {
@@ -54,35 +46,21 @@ class SettingsRepositoryImpl(context: Context) : SettingsRepository {
     }
 
     override fun setDarkThemePrimaryColor(color: Color) {
-        editor.putFloat(SettingsSP.DarkThemePrimaryColor.key + RED, color.red)
-        editor.putFloat(SettingsSP.DarkThemePrimaryColor.key + GREEN, color.green)
-        editor.putFloat(SettingsSP.DarkThemePrimaryColor.key + BLUE, color.blue)
-        editor.putFloat(SettingsSP.DarkThemePrimaryColor.key + ALPHA, color.alpha)
-        editor.apply()
+        editor.putString(SettingsSP.DarkThemePrimaryColor.key, color.toJson()).apply()
     }
 
     override fun getDarkThemePrimaryColor(): Color {
-        val r = sharedPreferences.getFloat(SettingsSP.DarkThemePrimaryColor.key + RED, Blue200.red)
-        val g = sharedPreferences.getFloat(SettingsSP.DarkThemePrimaryColor.key + GREEN, Blue200.green)
-        val b = sharedPreferences.getFloat(SettingsSP.DarkThemePrimaryColor.key + BLUE, Blue200.blue)
-        val a = sharedPreferences.getFloat(SettingsSP.DarkThemePrimaryColor.key + ALPHA, Blue200.alpha)
-        return Color(r, g, b, a)
+        val colorJson = sharedPreferences.getString(SettingsSP.DarkThemePrimaryColor.key, null)
+        return if (colorJson != null) colorFromJson(colorJson) else Blue200
     }
 
     override fun setLightThemePrimaryColor(color: Color) {
-        editor.putFloat(SettingsSP.LightThemePrimaryColor.key + RED, color.red)
-        editor.putFloat(SettingsSP.LightThemePrimaryColor.key + GREEN, color.green)
-        editor.putFloat(SettingsSP.LightThemePrimaryColor.key + BLUE, color.blue)
-        editor.putFloat(SettingsSP.LightThemePrimaryColor.key + ALPHA, color.alpha)
-        editor.apply()
+        editor.putString(SettingsSP.LightThemePrimaryColor.key, color.toJson()).apply()
     }
 
     override fun getLightThemePrimaryColor(): Color {
-        val r = sharedPreferences.getFloat(SettingsSP.LightThemePrimaryColor.key + RED, Blue500.red)
-        val g = sharedPreferences.getFloat(SettingsSP.LightThemePrimaryColor.key + GREEN, Blue500.green)
-        val b = sharedPreferences.getFloat(SettingsSP.LightThemePrimaryColor.key + BLUE, Blue500.blue)
-        val a = sharedPreferences.getFloat(SettingsSP.LightThemePrimaryColor.key + ALPHA, Blue500.alpha)
-        return Color(r, g, b, a)
+        val colorJson = sharedPreferences.getString(SettingsSP.LightThemePrimaryColor.key, null)
+        return if (colorJson != null) colorFromJson(colorJson) else Blue500
     }
 
     override fun setAppLanguage(language: String) {
@@ -93,4 +71,20 @@ class SettingsRepositoryImpl(context: Context) : SettingsRepository {
         val default = AppLanguage.English.languageKey
         return sharedPreferences.getString(SettingsSP.AppLanguage.key, default) ?: default
     }
+
+    private data class JsonColor(val red: Float, val green: Float, val blue: Float, val alpha: Float)
+
+
+    private fun Color.toJson(): String {
+        val jsonColorModel = JsonColor(red = this.red, green = this.green, blue = this.blue, alpha = this.alpha)
+        return Gson().toJson(jsonColorModel)
+    }
+
+    private fun colorFromJson(json: String): Color {
+        val jsonColorModel = Gson().fromJson(json, JsonColor::class.java)
+        return Color(jsonColorModel.red, jsonColorModel.green, jsonColorModel.blue, jsonColorModel.alpha
+        )
+    }
 }
+
+
